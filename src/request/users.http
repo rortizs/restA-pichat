@@ -1,0 +1,50 @@
+
+###
+//ad new user
+POST http://localhost:3000/api/login/new
+Content-Type: application/json
+
+{
+    "nombre": "Alison Aquino",
+    "user": "alison",
+    "password": "1234",
+    "imei": "234234sdfsdf23e4233"
+}
+
+###
+//login user
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "user": "david",
+    "password": "1234",
+    "imei": "2344234sdfsdf23e4233"
+}
+
+###
+//login user
+@contentType = application/json
+@token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MjQxZDk1ZjE3MWI0YzgxOGFkMTU4NzAiLCJpYXQiOjE2NDg1MDIwNjEsImV4cCI6MTY0ODU0NTI2MX0.7gJxn_dKyXg4Mdrr8dD2-2ierBzhBwqRZ0AeKar0wS4"
+GET http://localhost:3000/api/login/renew
+Content-Type: application/json
+contentType: {{contentType}}
+Headers: "x-token" {{token}}
+
+{
+    "user": "alison",
+    "password": "1234",
+    "imei": "234234sdfsdf23e4233"
+}
+
+###
+//update from is actived
+PUT http://localhost:3000/api/usuarios/623ffbb6ab04770cd5b52202
+content-type: application/json
+
+{
+    "active": true
+}
+
+###
+GET http://localhost:3000/api/usuarios

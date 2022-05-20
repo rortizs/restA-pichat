@@ -1,0 +1,6 @@
+
+# enviromment variables
+.env
+# node
+node_modules
+dist
