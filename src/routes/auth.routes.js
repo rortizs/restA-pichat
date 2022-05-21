@@ -1,5 +1,5 @@
 /**
- * path : api/ruta
+ * path : /api/ruta
  */
 import { Router, response } from "express";
 import { check } from "express-validator";

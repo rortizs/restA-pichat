@@ -1,7 +1,6 @@
-
-
 import Usuario from "../models/User";
 import Mensaje from "../models/Mensaje";
+import bcrypt from "bcryptjs/dist/bcrypt";
 
 export const usuarioConectado = async (_id = "") => {
   const usuario = Usuario.findById(_id);
@@ -9,8 +8,7 @@ export const usuarioConectado = async (_id = "") => {
 
   await Usuario.findByIdAndUpdate(_id, update);
   console.log("Authenticated ", usuario.user);
-    return usuario;
-
+  return usuario;
 };
 
 export const UsuarioDesconectado = async (_id = "") => {

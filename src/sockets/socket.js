@@ -2,9 +2,8 @@ import { io } from "../index";
 import { verificarJWT } from "../libs/jwt";
 import {
   usuarioConectado,
-  usarioDesconectado,
-  grabarMensaje,
   UsuarioDesconectado,
+  grabarMensaje,
 } from "../controllers/socket.controller";
 
 //mensaje de socket
@@ -26,7 +25,7 @@ io.on("connection", (client) => {
   console.log(uid);
 
   /**
-    Para ingresar al usuario a una sala especifica
+    Para ingresar al usuario a una sala en particular
     sala global, client.id, uid
      */
 

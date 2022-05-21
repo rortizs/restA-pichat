@@ -1,15 +1,16 @@
 /**
- * path api/addimage
+ * path /api/addimage
  */
 
 import { Router, response } from "express";
+//import { validarJWT } from "../middlewares/validar-jwt";
 import * as UploadCtrl from "../controllers/upload.controller";
 
 const router = new Router();
 
 /**
- * Ruta: /user GET
+ * validar token
  */
-router.post(`/`, UploadCtrl.upload, UploadCtrl.uploadFile);
+router.post("/", UploadCtrl.upload, UploadCtrl.uploadFile);
 
 module.exports = router;

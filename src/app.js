@@ -7,7 +7,7 @@ import path from "path";
 import AuthsRoutes from "./routes/auth.routes";
 import UsersRoutes from "./routes/user.routes";
 import MensajesRoutes from "./routes/mensajes.routes";
-import UploadRoutes from "./routes/uploadImage.routes";
+import ImageRoutes from "./routes/uploadImage.routes";
 
 //app express
 const app = express();
@@ -25,16 +25,18 @@ app.use(express.urlencoded({ extended: false }));
 
 //public path
 const publicPath = path.resolve(__dirname, "public");
+const uploads = path.resolve(__dirname, "/public/uploads");
 app.use(express.static(publicPath));
+app.use(express.static(uploads));
 
 //routes url
 app.get("/", (req, res) => {
   res.json({ message: "welcome to my application" });
 });
 
-app.use("/api/loggit in", AuthsRoutes);
+app.use("/api/login", AuthsRoutes);
 app.use("/api/usuarios", UsersRoutes);
 app.use("/api/mensajes", MensajesRoutes);
-app.use("/api/addimage", UploadRoutes);
+app.use("/api/addimage", ImageRoutes);
 
 export default app;

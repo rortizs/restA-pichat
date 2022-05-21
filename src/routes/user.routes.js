@@ -1,5 +1,5 @@
 /**
- *  path: api/usuarios
+ *  path: /api/usuarios
  */
 
 import { Router, response } from "express";
@@ -11,6 +11,6 @@ const router = new Router();
 //validate token
 
 router.get("/", validarJWT, UsersCtrl.getUsers);
-router.put("/:id", UsersCtrl.updateUser);
+router.put("/:id",validarJWT, UsersCtrl.updateUser);
 
 export default router;
