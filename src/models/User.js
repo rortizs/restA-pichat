@@ -17,12 +17,16 @@ const UsuarioSchema = new Schema({
   imei: {
     type: String,
     required: true,
-    },
-    active: {
-        type: Boolean,
-        default: false,
-    },
+  },
+  active: {
+    type: Boolean,
+    default: false,
+  },
   online: {
+    type: Boolean,
+    default: false,
+  },
+  isAdmin: {
     type: Boolean,
     default: false,
   },
@@ -30,7 +34,7 @@ const UsuarioSchema = new Schema({
 
 //sobre escribe un method
 UsuarioSchema.method("toJson", function () {
-  const { __v, _id, password, ...object} = this.object();
+  const { __v, _id, password, ...object } = this.object();
   object.uid = _id;
   return object;
 });

@@ -13,7 +13,7 @@ import ImageRoutes from "./routes/uploadImage.routes";
 const app = express();
 
 //settings
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 4000);
 
 //midlewares
 const corsOptions = {}; //save settings for cors middleware

@@ -11,6 +11,6 @@ const router = new Router();
 //validate token
 
 router.get("/", validarJWT, UsersCtrl.getUsers);
-router.put("/:id",validarJWT, UsersCtrl.updateUser);
+router.put("/:id", UsersCtrl.updateUser);
 
 export default router;
